@@ -1,12 +1,14 @@
 import React from "react";
 
-export const name = "Michael";
+type Props = {
+  children?: React.ReactNode;
+};
 
-export const SimpleName: React.FunctionComponent = () => {
+export const SimpleName = ({ children = "Nichts angegeben" }: Props) => {
   return (
     <>
       <p>Mein Name:</p>
-      <p>{name}</p>
+      <p>{children}</p>
     </>
   );
 };

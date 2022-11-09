@@ -15,6 +15,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <SimpleN>{"Sofia"}</SimpleN>
       <SimpleN />
       <p>Text: {text}</p>
       <button onClick={() => handleClick()}>Hier klicken</button>
