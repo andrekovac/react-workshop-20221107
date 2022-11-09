@@ -1,13 +1,13 @@
+import React from "react";
 import "./App.css";
 import SimpleN from "./components/SimpleName";
 
 const App = () => {
-  let text = "Zeige das hier an.";
+  const [text, setText] = React.useState("Zeige das hier an.");
 
   const handleClick = () => {
-    console.log("vorher", { text });
-    text = "Neuer Text";
-    console.log("nachher", { text });
+    setText("Neuer text");
+    console.log("handleClick", { text });
   };
 
   console.log("render");
