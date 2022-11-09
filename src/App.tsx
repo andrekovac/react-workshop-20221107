@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Counter from "./components/Counter";
 import SimpleN from "./components/SimpleName";
 
 const App = () => {
@@ -10,13 +11,16 @@ const App = () => {
     console.log("handleClick", { text });
   };
 
-  console.log("render");
+  console.log("render App");
 
   return (
     <div className="App">
       <SimpleN />
       <p>Text: {text}</p>
       <button onClick={() => handleClick()}>Hier klicken</button>
+      <div style={{ padding: 10 }}>
+        <Counter />
+      </div>
     </div>
   );
 };
