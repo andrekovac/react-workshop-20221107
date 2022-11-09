@@ -1,15 +1,22 @@
 import "./App.css";
 import SimpleN from "./components/SimpleName";
 
-const handleClick = (text: string) => alert(text);
-
 const App = () => {
-  const text = "Zeige das hier an.";
+  let text = "Zeige das hier an.";
+
+  const handleClick = () => {
+    console.log("vorher", { text });
+    text = "Neuer Text";
+    console.log("nachher", { text });
+  };
+
+  console.log("render");
 
   return (
     <div className="App">
       <SimpleN />
-      <button onClick={() => handleClick(text)}>Hier klicken</button>
+      <p>Text: {text}</p>
+      <button onClick={() => handleClick()}>Hier klicken</button>
     </div>
   );
 };
