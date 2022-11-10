@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import BookDetail from "./components/BookDetail";
 import BookList from "./components/BookList";
 import Counter from "./components/Counter";
 import SimpleN from "./components/SimpleName";
@@ -32,6 +33,7 @@ const App = () => {
       <button onClick={() => setShowCounter(false)}>Counter ausblenden</button>
       <div style={{ padding: 10 }}>{showCounter ? <Counter /> : null}</div>
       <BookList />
+      <BookDetail />
     </div>
   );
 };
