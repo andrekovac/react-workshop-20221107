@@ -1,41 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import "./App.css";
 import BookDetail from "./components/BookDetail";
-import BookList from "./components/BookList";
-import Counter from "./components/Counter";
-import SimpleN from "./components/SimpleName";
+import Playground from "./components/Playground";
 
 const App = () => {
-  const [text, setText] = React.useState("Zeige das hier an.");
-  const [showCounter, setShowCounter] = React.useState(true);
-  const [isbn, setIsbn] = React.useState("9781449372620");
-
-  const handleClick = () => {
-    setText("Neuer text");
-    console.log("handleClick", { text });
-  };
-
-  React.useEffect(() => {
-    console.log("[App component] text effect");
-  }, [text]);
-
-  React.useEffect(() => {
-    console.log("[App component] showCounter effect");
-  }, [showCounter]);
-
-  console.log("render App");
+  const [isbn, setIsbn] = useState("9781449372620");
 
   return (
     <div className="App">
-      <SimpleN>{"Sofia"}</SimpleN>
-      <SimpleN />
-      <p>Text: {text}</p>
-      <button onClick={() => handleClick()}>Hier klicken</button>
-      <button onClick={() => setShowCounter(false)}>Counter ausblenden</button>
-      <button onClick={() => setIsbn("9781491933091")}>Set new ISBN</button>
-      <div style={{ padding: 10 }}>{showCounter ? <Counter /> : null}</div>
-      <BookList />
-      <BookDetail isbn={isbn} />
+      <Playground />
+      <BookDetail isbn={isbn} onChangeIsbn={(newIsbn) => setIsbn(newIsbn)} />
     </div>
   );
 };
