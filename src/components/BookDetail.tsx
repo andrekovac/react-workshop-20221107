@@ -6,7 +6,11 @@ interface BookI {
   numPages?: number | null;
 }
 
-const BookDetail: React.FC = () => {
+type BookDetailProps = {
+  isbn: string;
+};
+
+const useBook = (isbn: string) => {
   const [book, setBook] = useState<BookI>({
     title: null,
     subtitle: null,
@@ -15,13 +19,19 @@ const BookDetail: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4730/books/1001606140805");
+      const response = await fetch(`http://localhost:4730/books/${isbn}`);
       const book = await response.json();
       setBook(book);
     };
 
     fetchData();
-  }, []);
+  }, [isbn]);
+
+  return book;
+};
+
+const BookDetail: React.FC<BookDetailProps> = ({ isbn }) => {
+  const book = useBook(isbn);
 
   return (
     <>
