@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useCount } from "../context/count";
 
 const Counter: React.FC = () => {
-  const [counter, setCounter] = useState<{ count: number }>({ count: 0 });
-
-  const incrementCount = () => {
-    setCounter({ ...counter, count: counter.count + 1 });
-  };
+  const { count, increment } = useCount();
 
   return (
     <>
       Zahl:
-      <button onClick={incrementCount}>{counter.count}</button>
+      <button onClick={increment}>{count}</button>
     </>
   );
 };
