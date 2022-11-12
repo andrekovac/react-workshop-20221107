@@ -1,7 +1,7 @@
 import React from "react";
-import BookList from "./BookList";
-import Counter from "./Counter";
-import SimpleN from "./SimpleName";
+import BookList from "../components/BookList";
+import Counter from "../components/Counter";
+import SimpleN from "../components/SimpleName";
 
 const Playground = () => {
   const [text, setText] = React.useState("Zeige das hier an.");
