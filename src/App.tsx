@@ -13,8 +13,11 @@ const App = () => {
     <div className="App">
       <nav>
         <div style={{ padding: 10 }}>
-          <Link to="/playground">Playground</Link> |
+          <Link to="/playground">Playground</Link>
+          {` | `}
           <Link to="/books">Books</Link>
+          {` | `}
+          <Link to="/counter">Counter</Link>
         </div>
       </nav>
 
@@ -29,7 +32,7 @@ const App = () => {
               onChangeIsbn={(newIsbn) => setIsbn(newIsbn)}
             />
           </Route>
-          <Route path="/counter">
+          <Route path="/counter/:nr">
             <Counter />
           </Route>
           <Route path="/playground">
