@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/BookList renders a booklist correctly 1`] = `
+Array [
+  <h1>
+    My list of Books
+  </h1>,
+  <ul>
+    <li>
+      My first book
+    </li>
+    <li>
+      My second book
+    </li>
+  </ul>,
+]
+`;
