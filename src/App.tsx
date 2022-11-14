@@ -3,6 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import "./App.css";
 import BookDetail from "./components/BookDetail";
 import Counter from "./components/Counter";
+import BookScreen from "./screens/book";
 import Books from "./screens/Books";
 import Playground from "./screens/Playground";
 
@@ -14,6 +15,8 @@ const App = () => {
       <nav>
         <div style={{ padding: 10 }}>
           <Link to="/playground">Playground</Link>
+          {` | `}
+          <Link to="/book">Book</Link>
           {` | `}
           <Link to="/books">Books</Link>
           {` | `}
@@ -32,14 +35,17 @@ const App = () => {
               onChangeIsbn={(newIsbn) => setIsbn(newIsbn)}
             />
           </Route>
+          <Route path="/books">
+            <Books />
+          </Route>
+          <Route path="/book/:isbn">
+            <BookScreen />
+          </Route>
           <Route path="/counter/:nr">
             <Counter />
           </Route>
           <Route path="/playground">
             <Playground />
-          </Route>
-          <Route path="/books">
-            <Books />
           </Route>
           <Route>
             <h2>404 Error!!</h2>
